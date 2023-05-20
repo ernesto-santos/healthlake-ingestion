@@ -58,10 +58,20 @@ Na tela de "Modify IAM Role", escolhemos a AWS IAM Role que criamos no passo 3, 
 ## Passo 6: Instalando o projeto Synthea na instancia EC2 recém criada:
 A partir de um acesso à instancia EC2 via SSH, iremos instalar o projeto Synthea, o qual utilizaremos para genar nossa massa de dados de pacientes sintéticos no formato FHIR.  
   
-Iremos inicialmente instalar o JDK java.
+Iremos inicialmente instalar o JDK java e o cliente do git.
   
 ```
-[ec2-user@ip-x-x-x-x ~]$ sudo yum install java-11-amazon-corretto-devel.x86_64
+[ec2-user@ip-x-x-x-x ~]$ sudo yum install java-11-amazon-corretto-devel.x86_64 git
 ```
   
-???
+Agora iremos baixar o repositório do projeto Synthea.  
+  
+```
+[ec2-user@ip-x-x-x-x ~]$ cd /home/ec2-user
+[ec2-user@ip-x-x-x-x ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-x-x-x-x ~]$ git clone https://github.com/synthetichealth/synthea.git
+```
+  
+????
+
