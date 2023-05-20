@@ -90,11 +90,12 @@ mv /home/ec2-user/healthlake-ingestion/synthea_exemplo.properties /home/ec2-user
 ```
   
 Agora estamos prontos para iniciar a geração de massa de pacientes sintéticos.  
-Para isso iremos executar o "run_synthea" para a operação de criação dos arquivos, onde ???? refere-se a quantidade de pacientes que iremos criar.  
+Para isso iremos executar o "run_synthea" para a operação de criação dos arquivos.  
+Neste exemplo abaixo, faremos a criação de 10 pacientes sintéticos (-p 10).  
 
 ```
 cd /home/ec2-user/synthea
-./run_synthea -s 9999 -p ????
+./run_synthea -s 9999 -p 10
 ``` 
   
 Após a geração dos pacientes sintéticos, veremos os arquivos gerados no diretório "/home/ec2-user/synthea/output/fhir", como podemos verificar neste exemplo abaixo, onde geramos 10 pacientes.
