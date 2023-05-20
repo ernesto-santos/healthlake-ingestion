@@ -55,4 +55,13 @@ Na tela de "Modify IAM Role", escolhemos a AWS IAM Role que criamos no passo 3, 
   
 <kbd>![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_2.png)</kbd>
   
-????
+## Passo 6: Instalando o projeto Synthea na instancia EC2 recém criada:
+A partir de um acesso à instancia EC2 via SSH, iremos instalar o projeto Synthea, o qual utilizaremos para genar nossa massa de dados de pacientes sintéticos no formato FHIR.  
+  
+Iremos inicialmente instalar o JDK java.
+  
+```
+[ec2-user@ip-x-x-x-x ~]$ sudo yum install java-11-amazon-corretto-devel.x86_64
+```
+  
+???
