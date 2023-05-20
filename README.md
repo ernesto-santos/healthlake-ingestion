@@ -61,17 +61,29 @@ A partir de um acesso à instancia EC2 via SSH, iremos instalar o projeto Synthe
 Iremos inicialmente instalar o JDK java e o cliente do git.
   
 ```
-[ec2-user@ip-x-x-x-x ~]$ sudo yum install java-11-amazon-corretto-devel.x86_64 git
+sudo yum install java-11-amazon-corretto-devel.x86_64 git
 ```
   
-Agora iremos baixar o repositório do projeto Synthea.  
+Iremos baixar o repositório do projeto Synthea, e efetuar a instalação do mesmo na instancia.  
   
 ```
-[ec2-user@ip-x-x-x-x ~]$ cd /home/ec2-user
-[ec2-user@ip-x-x-x-x ~]$ pwd
-/home/ec2-user
-[ec2-user@ip-x-x-x-x ~]$ git clone https://github.com/synthetichealth/synthea.git
+cd /home/ec2-user
+git clone https://github.com/synthetichealth/synthea.git
+cd synthea
+./gradlew build check test
 ```
-  
-????
 
+Iremos baixar este repositório, na instancia que estamos utilizando.
+  
+```
+cd /home/ec2-user
+git clone https://github.com/ernesto-santos/healthlake-ingestion.git
+```
+
+Iremos substituir o arquivo original "synthea.properties" por um customizado para as nossas necessidades, que temos em nosso repositório.
+  
+```
+mv /home/ec2-user/healthlake-ingestion/synthea_exemplo.properties /home/ec2-user/synthea/src/main/resources/synthea.properties
+```
+  
+???
