@@ -30,8 +30,18 @@ A partir do console do [AWS IAM](https://us-east-1.console.aws.amazon.com/iamv2)
   
 ![Amazon HealthLake - AWS IAM Role - Passo 3 - 1](/images/AmazonHealthLake_iam_role_1.png)
   
-Esta AW IAM Role terá a configuração conforme a figura abaixo.  
+Esta AWS IAM Role terá a configuração conforme a figura abaixo.  
 
 ![Amazon HealthLake - AWS IAM Role - Passo 3 - 2](/images/AmazonHealthLake_iam_role_2.png)
 
 ## Passo 4: Criando uma instancia EC2 para a execução dos scripts de carga:
+Aqui executaremos alguns passos:  
+1. Criaremos uma AWS VPC
+2. Criaremos SubNets Públicas e Privadas abaixo da AWS VPC criada
+3. Criaremos uma "Key Pair" para usarmos no acesso SSH à instancia EC2 a qual criaremos
+4. Criaremos uma instancia EC2 sob uma das SubNets públicas
+  1. Esta instancia utilizará como sistema operacional o Amazon Linux
+  2. Esta instancia terá o tamanho necessário para atender a volumetria de ingestão a qual iremos realizar 
+  3. Esta instancia utilizará um IP válido (para que possamos acessa-la via SSH)
+  4. Esta instancia terá um AWS Security Group que permita somente acesso SSH a partir do seu IP atual de saída para a Internet
+  5. Esta instancia necessitará possuir espaço em disco suficiente para abrigar a massa de dados com a qual iremos lidar
