@@ -55,7 +55,7 @@ Na tela de "Modify IAM Role", escolhemos a AWS IAM Role que criamos no passo 3, 
   
 <kbd>![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_2.png)</kbd>
   
-## Passo 6: Instalando o projeto Synthea na instancia EC2 recém criada:
+## Passo 6: Baixando e instalando o projeto "Synthea":
 A partir de um acesso à instancia EC2 via SSH, iremos instalar o projeto Synthea, o qual utilizaremos para genar nossa massa de dados de pacientes sintéticos no formato FHIR.  
   
 Inicialmente instalaremos o JDK java e o cliente do git.
@@ -72,15 +72,18 @@ git clone https://github.com/synthetichealth/synthea.git
 cd synthea
 ./gradlew build check test
 ```
-
-Baixaremos este nosso repositório na instancia que estamos utilizando.
   
+## Passo 7: Baixando e instalando o repositório "healthlake-ingestion":
+Este nosso repositório "healthlake-ingestion" traz scripts, que facilitarão e viabilizarão nossa tarefa de carga de dados em nosso "Data Store" Amazon HealthLake.  
+Com isso iremos executar os comandos abaixo.
+
 ```
 cd /home/ec2-user
 git clone https://github.com/ernesto-santos/healthlake-ingestion.git
 ```
-
-Substituiremos o arquivo original "synthea.properties" por um customizado para as nossas necessidades, o qual temos em nosso repositório.
+  
+## Passo 8: Preparando e executando a geração de pacientes sintéticos a partir do "Synthea":
+Aproveitando que agora temos o repositório em nossa instancia EC2, iremos substituiremos o arquivo original "synthea.properties" por um customizado para as nossas necessidades.
   
 ```
 mv /home/ec2-user/healthlake-ingestion/synthea_exemplo.properties /home/ec2-user/synthea/src/main/resources/synthea.properties
@@ -117,6 +120,7 @@ drwxr-xr-x. 4 ec2-user ec2-user      34 May 20 19:14 ..
 -rw-r--r--. 1 ec2-user ec2-user  155126 May 20 21:24 practitionerInformation1684617874405.json
 ```
   
+## Passo 9: Reagrupando os arquivos gerados, para a execução da carga de maneira paralela:
 Afim de distribuir estes arquivos em 5 grupos, iremos criar 4 outros diretórios na mesma estrutura de "output" do Synthea.  
 Para isso podemos executar a linha abaixo.  
   
@@ -179,5 +183,6 @@ find /home/ec2-user/synthea/output -ls
  67132169    712 -rw-r--r--   1 ec2-user ec2-user   726697 May 20 21:24 /home/ec2-user/synthea/output/fhir5/Shawn523_Heidenreich818_7bce2dd4-a795-ad80-a338-0e51bacb464c.json
  67132166    356 -rw-r--r--   1 ec2-user ec2-user   363643 May 20 21:24 /home/ec2-user/synthea/output/fhir5/Terresa418_Towne435_f0bfa360-a7b8-a4ff-1ba4-1dc9952c2e05.json
 ``` 
-  
-  
+    
+## Passo 10: Preparando o ambiente para a execução da carga:
+????
