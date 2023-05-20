@@ -35,15 +35,24 @@ Esta AWS IAM Role terá a configuração conforme a figura abaixo.
 ![Amazon HealthLake - AWS IAM Role - Passo 3 - 2](/images/AmazonHealthLake_iam_role_2.png)
 
 ## Passo 4: Criando uma instancia EC2 para a execução dos scripts de carga:
-Aqui executaremos alguns passos:  
-1. Criaremos uma AWS VPC
-2. Criaremos SubNets Públicas e Privadas abaixo da AWS VPC criada
-3. Criaremos uma "Key Pair" para usarmos no acesso SSH à instancia EC2 a qual criaremos
-4. Criaremos uma instancia EC2 sob uma das SubNets públicas
+Para a criação da instancia EC2, deve-se atender aos passos abaixo:  
+1. Criar uma AWS VPC
+2. Criar SubNets Públicas e Privadas abaixo da AWS VPC criada
+3. Criar uma "Key Pair", para ser usada no acesso SSH à instancia EC2 que será criada
+4. Criar uma instancia EC2 abaixo de uma das SubNets públicas criadas acima
     1. Esta instancia utilizará como sistema operacional o Amazon Linux
-    2. Esta instancia terá o tamanho necessário para atender a volumetria de ingestão a qual iremos realizar 
-    3. Esta instancia utilizará um IP válido (para que possamos acessa-la via SSH)
-    4. Esta instancia terá um AWS Security Group que permita somente acesso SSH a partir do seu IP atual de saída para a Internet
-    5. Esta instancia necessitará possuir espaço em disco suficiente para abrigar a massa de dados com a qual iremos lidar
+    2. Esta instancia precisará ter o tamanho (tipo) necessário para atender a volumetria de ingestão relizada 
+    3. Esta instancia utilizará um IP válido (para que seja possível o acesso à mesma via SSH)
+    4. Esta instancia deve estar associada a um AWS Security Group que permita acesso SSH somente a partir do seu IP atual de saída para a Internet
+    5. Esta instancia necessitará possuir espaço em disco suficiente para abrigar a massa de dados a qual se planeja trabalhar
 
-???
+## Passo 5: Associação da AWS IAM Role à instancia EC2 recém criada:
+A partir da tela de detalhes da instancia, utilizando-se do botão "Actions", iremos seguir a sequencia de escolha conforme a imagem abaixo.  
+  
+![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_1.png)
+  
+Na tela de "Modify IAM Role", escolhemos a AWS IAM Role que criamos no passo 3, e clicaremos no botão "Update IAM Role".  
+  
+![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_2.png)
+  
+????
