@@ -146,3 +146,38 @@ Parametro 2: numeral do último novo diretório criado (neste exemplo 5).
 Parametro 3: quantos arquivos devem ser movidos para os novos diretórios (neste exemplo 2).  
   
 ```
+cd /home/ec2-user/healthlake-ingestion
+bash quebra_origem.sh 2 5 2
+```
+
+Podemos ver abaixo via execução de um comando "find", como os arquivos foram distribuidos através dos novos diretórios criados.  
+  
+```
+find /home/ec2-user/synthea/output -ls
+ 58732096      0 drwxr-xr-x   8 ec2-user ec2-user       86 May 20 21:30 /home/ec2-user/synthea/output
+ 67133972      0 drwxr-xr-x   2 ec2-user ec2-user      100 May 20 21:44 /home/ec2-user/synthea/output/fhir
+ 67132178    148 -rw-r--r--   1 ec2-user ec2-user   148352 May 20 21:24 /home/ec2-user/synthea/output/fhir/hospitalInformation1684617874405.json
+ 67132179    152 -rw-r--r--   1 ec2-user ec2-user   155126 May 20 21:24 /home/ec2-user/synthea/output/fhir/practitionerInformation1684617874405.json
+ 75587026     16 drwxr-xr-x   2 ec2-user ec2-user    16384 May 20 21:24 /home/ec2-user/synthea/output/metadata
+ 75587027      4 -rw-r--r--   1 ec2-user ec2-user      503 May 20 19:14 /home/ec2-user/synthea/output/metadata/2023_05_20T19_13_55Z_1_Massachusetts_da5fb54a_5a71_4d81_9e2c_3745ec4fdb82.json
+ 75587042      4 -rw-r--r--   1 ec2-user ec2-user      503 May 20 19:16 /home/ec2-user/synthea/output/metadata/2023_05_20T19_16_25Z_1_Massachusetts_fec4396c_a93a_40d2_bb4d_7048ce7c32e7.json
+ 75587044      4 -rw-r--r--   1 ec2-user ec2-user      504 May 20 21:24 /home/ec2-user/synthea/output/metadata/2023_05_20T21_24_34Z_10_Massachusetts_cad1cd46_546d_4329_8c18_ce0fe4a22bbe.json
+ 41948508     16 drwxr-xr-x   2 ec2-user ec2-user    16384 May 20 21:44 /home/ec2-user/synthea/output/fhir2
+ 67132167    756 -rw-r--r--   1 ec2-user ec2-user   770257 May 20 21:24 /home/ec2-user/synthea/output/fhir2/Bertie593_Jacobson885_daa832b2-a84c-6dec-87a0-4f50b97771db.json
+ 67132175    612 -rw-r--r--   1 ec2-user ec2-user   626270 May 20 21:24 /home/ec2-user/synthea/output/fhir2/Bethel526_Kling921_f4e0b2b0-01cb-5b36-666d-4e7da70f90e2.json
+ 67132171   1004 -rw-r--r--   1 ec2-user ec2-user  1027383 May 20 21:24 /home/ec2-user/synthea/output/fhir2/Efrain317_Gusikowski974_f2097a8f-9d4a-41f0-c6c4-3bc70abd2e74.json
+ 50379462     16 drwxr-xr-x   2 ec2-user ec2-user    16384 May 20 21:44 /home/ec2-user/synthea/output/fhir3
+ 67132170   1012 -rw-r--r--   1 ec2-user ec2-user  1032788 May 20 21:24 /home/ec2-user/synthea/output/fhir3/Evangeline16_Lowe577_935bad98-c3b4-5756-44be-12bf55adb976.json
+ 67132177   6280 -rw-r--r--   1 ec2-user ec2-user  6428479 May 20 21:24 /home/ec2-user/synthea/output/fhir3/Jana258_Bernier607_60e0a3e1-586f-8dda-21ba-9671af83e390.json
+ 67132168    448 -rw-r--r--   1 ec2-user ec2-user   457753 May 20 21:24 /home/ec2-user/synthea/output/fhir3/Mark765_Klein929_68e74ffd-81a0-fd6b-722c-2a130734964b.json
+ 58732118     16 drwxr-xr-x   2 ec2-user ec2-user    16384 May 20 21:44 /home/ec2-user/synthea/output/fhir4
+ 67132173   1976 -rw-r--r--   1 ec2-user ec2-user  2022285 May 20 21:24 /home/ec2-user/synthea/output/fhir4/Nadia817_Sipes176_6892ce66-5ca5-47b3-2a70-4e49ed121343.json
+ 67132176   2644 -rw-r--r--   1 ec2-user ec2-user  2703401 May 20 21:24 /home/ec2-user/synthea/output/fhir4/Noreen211_Roob72_5df2881a-f46f-0729-c519-f0440302e382.json
+ 67132172    860 -rw-r--r--   1 ec2-user ec2-user   880148 May 20 21:24 /home/ec2-user/synthea/output/fhir4/Paz9_Pfannerstill264_02efd55e-02fa-09d0-924d-5e7ba6be14b6.json
+ 67130677     16 drwxr-xr-x   2 ec2-user ec2-user    16384 May 20 21:44 /home/ec2-user/synthea/output/fhir5
+ 67132174    684 -rw-r--r--   1 ec2-user ec2-user   696862 May 20 21:24 /home/ec2-user/synthea/output/fhir5/Sadie426_Dicki44_367c89fd-259c-105d-5951-da5f1ce8b6cf.json
+ 67132169    712 -rw-r--r--   1 ec2-user ec2-user   726697 May 20 21:24 /home/ec2-user/synthea/output/fhir5/Shawn523_Heidenreich818_7bce2dd4-a795-ad80-a338-0e51bacb464c.json
+ 67132166    356 -rw-r--r--   1 ec2-user ec2-user   363643 May 20 21:24 /home/ec2-user/synthea/output/fhir5/Terresa418_Towne435_f0bfa360-a7b8-a4ff-1ba4-1dc9952c2e05.json
+``` 
+  
+  
