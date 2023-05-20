@@ -6,33 +6,33 @@ Para os passos abaixo, assumiremos que estamos utilizando a AWS Region: us-east-
 ## Passo 1: Criando um AWS HealthLake Data Store
 A partir do console do [Amazon HealthLake](https://us-east-1.console.aws.amazon.com/healthlake/home?region=us-east-1#/), clique em "Create a Data Store":  
   
-![Amazon HealthLake - Create Data Store - Passo 1 - 1](/images/AmazonHealthLake_create_datastore_1.png)  
+<kbd>![Amazon HealthLake - Create Data Store - Passo 1 - 1](/images/AmazonHealthLake_create_datastore_1.png)</kbd>
   
 Escolha um nome para o seu "Data Store":  
   
-![Amazon HealthLake - Create Data Store - Passo 1 - 2](/images/AmazonHealthLake_create_datastore_2.png)  
+<kbd>![Amazon HealthLake - Create Data Store - Passo 1 - 2](/images/AmazonHealthLake_create_datastore_2.png)</kbd>
   
 Clique em "Create Data Store":  
   
-![Amazon HealthLake - Create Data Store - Passo 1 - 3](/images/AmazonHealthLake_create_datastore_3.png)  
+<kbd>![Amazon HealthLake - Create Data Store - Passo 1 - 3](/images/AmazonHealthLake_create_datastore_3.png)</kbd>
   
 ## Passo 2: Tomando nota do AWS HealthLake Data Store Endpoint
 A partir do console do [Amazon HealthLake](https://us-east-1.console.aws.amazon.com/healthlake/home?region=us-east-1#/), abra o menu lateral esquerdo, e clique no "Data Store" que você acabou de criar:  
   
-![Amazon HealthLake - Data Store End-point - Passo 2 - 1](/images/AmazonHealthLake_datastore_endpoint_1.png)  
+<kbd>![Amazon HealthLake - Data Store End-point - Passo 2 - 1](/images/AmazonHealthLake_datastore_endpoint_1.png)</kbd>
   
 A partir da tela de informações de seu "Data Store", copie a URL do Endpoint indicado pela seta na imagem abaixo, e reserve esta URL, pois a utilizaremos em nossos scripts.  
   
-![Amazon HealthLake - Data Store End-point - Passo 2 - 2](/images/AmazonHealthLake_datastore_endpoint_2.png)
+<kbd>![Amazon HealthLake - Data Store End-point - Passo 2 - 2](/images/AmazonHealthLake_datastore_endpoint_2.png)</kbd>
   
 ## Passo 3: Criando uma AW IAM Role, para ser usada na instancia EC2 que rodará os scripts de ingestão:
 A partir do console do [AWS IAM](https://us-east-1.console.aws.amazon.com/iamv2), iremos criar uma AWS IAM Role conforme a abaixo.  
   
-![Amazon HealthLake - AWS IAM Role - Passo 3 - 1](/images/AmazonHealthLake_iam_role_1.png)
+<kbd>![Amazon HealthLake - AWS IAM Role - Passo 3 - 1](/images/AmazonHealthLake_iam_role_1.png)</kbd>
   
 Esta AWS IAM Role terá a configuração conforme a figura abaixo.  
 
-![Amazon HealthLake - AWS IAM Role - Passo 3 - 2](/images/AmazonHealthLake_iam_role_2.png)
+<kbd>![Amazon HealthLake - AWS IAM Role - Passo 3 - 2](/images/AmazonHealthLake_iam_role_2.png)</kbd>
 
 ## Passo 4: Criando uma instancia EC2 para a execução dos scripts de carga:
 Para a criação da instancia EC2, deve-se atender aos passos abaixo:  
@@ -53,6 +53,6 @@ A partir da tela de detalhes da instancia, utilizando-se do botão "Actions", ir
   
 Na tela de "Modify IAM Role", escolhemos a AWS IAM Role que criamos no passo 3, e clicaremos no botão "Update IAM Role".  
   
-![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_2.png)
+<kbd>![Amazon HealthLake - AWS IAM Role - Passo 5 - 1](/images/AmazonHealthLake_ec2_profile_2.png)</kbd>
   
 ????
