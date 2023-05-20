@@ -40,8 +40,10 @@ Aqui executaremos alguns passos:
 2. Criaremos SubNets Públicas e Privadas abaixo da AWS VPC criada
 3. Criaremos uma "Key Pair" para usarmos no acesso SSH à instancia EC2 a qual criaremos
 4. Criaremos uma instancia EC2 sob uma das SubNets públicas
-  1. Esta instancia utilizará como sistema operacional o Amazon Linux
-  2. Esta instancia terá o tamanho necessário para atender a volumetria de ingestão a qual iremos realizar 
-  3. Esta instancia utilizará um IP válido (para que possamos acessa-la via SSH)
-  4. Esta instancia terá um AWS Security Group que permita somente acesso SSH a partir do seu IP atual de saída para a Internet
-  5. Esta instancia necessitará possuir espaço em disco suficiente para abrigar a massa de dados com a qual iremos lidar
+    1. Esta instancia utilizará como sistema operacional o Amazon Linux
+    2. Esta instancia terá o tamanho necessário para atender a volumetria de ingestão a qual iremos realizar 
+    3. Esta instancia utilizará um IP válido (para que possamos acessa-la via SSH)
+    4. Esta instancia terá um AWS Security Group que permita somente acesso SSH a partir do seu IP atual de saída para a Internet
+    5. Esta instancia necessitará possuir espaço em disco suficiente para abrigar a massa de dados com a qual iremos lidar
+
+???
