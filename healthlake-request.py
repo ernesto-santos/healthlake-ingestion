@@ -1,9 +1,7 @@
 import requests, json, sys, time
 from requests_auth_aws_sigv4 import AWSSigV4
 
-#aws_auth = AWSSigV4('healthlake')
-
-healthlake_endpoint = "https://healthlake.us-east-1.amazonaws.com/datastore/82a61353d99d32fbd4e5efa329398586/r4/"
+healthlake_endpoint = "https://healthlake.us-east-1.amazonaws.com/datastore/01a01...hash...1a010/r4/"
 splitted_json = json.loads('{"resourceType": "Bundle", "type": "batch", "entry": []}')
 
 counter = 0
