@@ -194,4 +194,29 @@ Para isso, edite o script "healyjlake-request.py", e substitua a URL de exemplo 
 cd /home/ec2-user/healthlake-ingestion
 vi healthlake-request.py
 ```
-???
+
+<kbd>![Amazon HealthLake - Adjuste da URL do endpoint do Datastore no script de carga - Passo 10 - 1](/images/AmazonHealthLake_create_datastore_1.png)</kbd>
+
+    
+## Passo 11: Execução da carga:
+No diretório de nosso projeto, temos um script desenvolvido em shell, afim de facilitar a rotina de carga e gestão dos arquivos já carregados em nosso Data Store de Health Lake.  
+Antes de executarmos o script, devemos criar um diretório, o qual utilizaremos para concentrar os arquivos que já carregamos na base.  
+
+Vamos então criar nosso diretório, que aqui em nosso exemplo chamaremos de "/home/ec2-user/healthlake-ingestion/output_carregados":
+```
+cd /home/ec2-user/healthlake-ingestion
+mdkdir output_carregados
+```
+
+Com isso já podemos executar nosso script, onde na chamada do mesmo devemos fornecer o diretório origem dos arquivos que serão carregados, assim como o diretório destino, para onde moveremos os arquivos já carregados.  
+```
+cd /home/ec2-user/healthlake-ingestion
+bash chama_carga.sh /home/ec2-user/synthea/output/fhir /home/ec2-user/healthlake-ingestion/output_carregados
+```
+
+A partir deste ponto, podemos acompanhar no output do script, como o script está se comportando.  
+
+OBS: Voc6e pode executar quantas instancias do script acima quantas necessárias, afim de executar cargas de maneira paralela.  
+
+
+FIM !
