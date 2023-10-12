@@ -216,7 +216,7 @@ bash chama_carga.sh /home/ec2-user/synthea/output/fhir /home/ec2-user/healthlake
 
 A partir deste ponto, podemos acompanhar no output do script, como o script está se comportando.  
 
-OBS: Voc6e pode executar quantas instancias do script acima quantas necessárias, afim de executar cargas de maneira paralela.  
+OBS: Caso você deseje executar a carga de maneira paralela, você pode executar quantas instancias do script acima forem necessárias. Onde você pode se utilizar também do recurso de "nohup", afim de executar o script em background.  
 
 
 FIM !
