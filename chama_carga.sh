@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# exemplos de origens: /home/ec2-user/synthea/output/fhir , /home/ec2-user/synthea/output/fhir2 , etc
+# Exemplos de origens: /home/ec2-user/synthea/output/fhir , /home/ec2-user/synthea/output/fhir2 , ...
+# Exemplos de destinos: /home/ec2-user/healthlake-ingestion/output_carregados
+
 dir_origem=${1}
-dir_destino="/home/ec2-user/synthea/output_carregado"
+dir_destino=${2}
 
 for arquivo in `ls ${dir_origem} `; do
 	echo "Abrindo: ${dir_origem}/${arquivo}"
