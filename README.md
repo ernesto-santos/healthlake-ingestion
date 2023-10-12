@@ -195,7 +195,7 @@ cd /home/ec2-user/healthlake-ingestion
 vi healthlake-request.py
 ```
 
-<kbd>![Amazon HealthLake - Adjuste da URL do endpoint do Datastore no script de carga - Passo 10 - 1](/images/AmazonHealthLake_create_datastore_1.png)</kbd>
+<kbd>![Amazon HealthLake - Adjuste da URL do endpoint do Datastore no script de carga - Passo 10 - 1](/images/AmazonHealthLake_script_Endpoint_URL_Update.png)</kbd>
 
     
 ## Passo 11: Execução da carga:
