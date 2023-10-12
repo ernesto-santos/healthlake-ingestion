@@ -10,7 +10,7 @@ for arquivo in `ls ${dir_origem} `; do
 	echo "Abrindo: ${dir_origem}/${arquivo}"
 	echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 
-	python3 /home/ec2-user/json_import_thiago/healthlake-request.py ${dir_origem}/${arquivo}
+	python3 /home/ec2-user/healthlake-ingestion/healthlake-request.py ${dir_origem}/${arquivo}
 
 	if [ $? -ne 0 ]; then
 		echo "Erro !!!"
