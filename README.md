@@ -188,7 +188,7 @@ find /home/ec2-user/synthea/output -ls
 ## Passo 10: Preparando o ambiente para a execução da carga:
 Afim de realizar a carga dos dados gerados, precisamos ajustar o script de carga, para que considere o endpoint de Amazon Health Lake o qual utilizaremos.  
 
-Para isso, edite o script "healyjlake-request.py", e substitua a URL de exemplo do script, pela URl que você tomou nota no passo 2.  
+Para isso, edite o script "healyjlake-request.py", e substitua a URL de exemplo do script, pela URL que você tomou nota no "Passo 2".  
 
 ```
 cd /home/ec2-user/healthlake-ingestion
